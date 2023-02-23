@@ -6,9 +6,7 @@ namespace Sam.Application.Default;
 public record AddEntityCommand(
     Type EntityType,
     dynamic EntityToAdd,
-    Type ResponseType,
-    int PageIndex = 1,
-    int PageSize = 10
+    Type ResponseType
 ) : IRequest<object>;
 
 public class AddHandler : RequestHandlerBase, IRequestHandler<AddEntityCommand, object> {

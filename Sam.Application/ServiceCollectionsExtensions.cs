@@ -1,14 +1,12 @@
-﻿using MediatR;
-using Microsoft.Extensions.DependencyInjection;
-using Sam.Application.Default;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace Sam.Application;
 
 public static class ServiceCollectionsExtensions {
-    public static IServiceCollection AddApplication(this IServiceCollection services) {
+    public static IServiceCollection AddCqrs(this IServiceCollection services) {
         var assembly = Assembly.GetExecutingAssembly();
-        services.AddMediatR(assembly);
+        services.AddMediatR(c => c.RegisterServicesFromAssembly(assembly));
         return services;
     }
 

@@ -16,7 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => c.SchemaFilter<OfficeSchemaFilter>());
 builder.Services.AddCustomHealthChecks();
-builder.Services.AddApplication();
+builder.Services.AddCqrs();
 builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("EcomShopDatabase"));
 
 //

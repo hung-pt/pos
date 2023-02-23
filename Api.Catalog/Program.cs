@@ -1,3 +1,7 @@
+using Api.Catalog;
+using Api.Catalog.Routes;
+using Sam.Application;
+using Sam.Infrastructure;
 using Steeltoe.Discovery.Client;
 using Steeltoe.Discovery.Eureka;
 
@@ -9,6 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddServiceDiscovery(o => o.UseEureka());
+builder.Services.AddRedis();
+builder.Services.AddCqrs();
+builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("EcomShopDatabase"));
 
 var app = builder.Build();
 
@@ -25,6 +32,7 @@ if (app.Environment.IsDevelopment()) {
 
 app.UseAuthorization();
 
-app.MapControllers();
+//app.MapControllers();
+app.MapGroup("/product").MapProductApi().WithTags("Product");
 
 app.Run();
