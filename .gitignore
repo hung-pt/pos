@@ -1,0 +1,18 @@
+# Ignore NuGet Packages
+*.lock.json
+packages/
+*.nupkg
+*.vs/
+
+# Ignore build output
+build/
+bin/
+obj/
+TestResults/
+*.pdb
+*.exe
+*.dll
+
+# Ignore Visual Studio files
+*.user
+*.csproj.user
