@@ -7,7 +7,7 @@ namespace Sam.Application.Offices;
 
 public record struct RemoveOfficeCommand(string OfficeCode) : IRequest<Office?>;
 
-public class RemoveOfficeHandler : RequestHandlerBase, IRequestHandler<RemoveOfficeCommand, Office?> {
+public class RemoveOfficeHandler : HandlerBase, IRequestHandler<RemoveOfficeCommand, Office?> {
     public RemoveOfficeHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<Office?> Handle(RemoveOfficeCommand request, CancellationToken cancellationToken) {

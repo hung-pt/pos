@@ -7,7 +7,7 @@ namespace Sam.Application.Products;
 
 public record AddProductCommand(dynamic NewItem, Type? ResponseType) : IRequest<object?>;
 
-file class Handler : RequestHandlerBase, IRequestHandler<AddProductCommand, object?> {
+file class Handler : HandlerBase, IRequestHandler<AddProductCommand, object?> {
     public Handler(IApplicationDbContext context) : base(context) { }
 
     public async Task<object?> Handle(AddProductCommand request, CancellationToken ct) {

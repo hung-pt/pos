@@ -9,7 +9,7 @@ public record AddEntityCommand(
     Type ResponseType
 ) : IRequest<object>;
 
-public class AddHandler : RequestHandlerBase, IRequestHandler<AddEntityCommand, object> {
+public class AddHandler : HandlerBase, IRequestHandler<AddEntityCommand, object> {
     public AddHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<object> Handle(AddEntityCommand request, CancellationToken ccToken) {

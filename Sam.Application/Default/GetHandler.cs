@@ -11,7 +11,7 @@ public record GetQuery(
     int PageSize = 10
 ) : IRequest<IEnumerable<object>>;
 
-public class GetHandler : RequestHandlerBase, IRequestHandler<GetQuery, IEnumerable<object>> {
+public class GetHandler : HandlerBase, IRequestHandler<GetQuery, IEnumerable<object>> {
     public GetHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<IEnumerable<object>> Handle(GetQuery req, CancellationToken ct) {

@@ -7,7 +7,7 @@ namespace Sam.Application.Offices;
 
 public record ListProductsQuery(int PageIndex, int PageSize, Type? ResponseType) : IRequest<IEnumerable<object?>>;
 
-file class Handler : RequestHandlerBase, IRequestHandler<ListProductsQuery, IEnumerable<object?>> {
+file class Handler : HandlerBase, IRequestHandler<ListProductsQuery, IEnumerable<object?>> {
     public Handler(IApplicationDbContext context) : base(context) { }
 
     public async Task<IEnumerable<object?>> Handle(ListProductsQuery r, CancellationToken ct) {

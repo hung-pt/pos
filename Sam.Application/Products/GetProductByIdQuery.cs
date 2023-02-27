@@ -8,7 +8,7 @@ namespace Sam.Application.Products;
 
 public record struct GetProductByIdQuery(string ProductCode, Type? ResponseType) : IRequest<object?>;
 
-file class Handler : RequestHandlerBase, IRequestHandler<GetProductByIdQuery, object?> {
+file class Handler : HandlerBase, IRequestHandler<GetProductByIdQuery, object?> {
     public Handler(IApplicationDbContext context) : base(context) { }
 
     public async Task<object?> Handle(GetProductByIdQuery r, CancellationToken ct) {

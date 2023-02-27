@@ -6,7 +6,7 @@ namespace Sam.Application.Products;
 
 public record RemoveProductCommand(string ProductCode) : IRequest;
 
-file class Handler : RequestHandlerBase, IRequestHandler<RemoveProductCommand> {
+file class Handler : HandlerBase, IRequestHandler<RemoveProductCommand> {
     public Handler(IApplicationDbContext context) : base(context) { }
 
     public async Task Handle(RemoveProductCommand r, CancellationToken ct) {

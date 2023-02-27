@@ -8,7 +8,7 @@ namespace Sam.Application.Offices;
 
 public record struct GetOfficeByIdQuery(string OfficeCode) : IRequest<Office?>;
 
-public class GetOfficeByIdHandler : RequestHandlerBase, IRequestHandler<GetOfficeByIdQuery, Office?> {
+public class GetOfficeByIdHandler : HandlerBase, IRequestHandler<GetOfficeByIdQuery, Office?> {
     public GetOfficeByIdHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<Office?> Handle(GetOfficeByIdQuery request, CancellationToken cancellationToken) {

@@ -2,7 +2,7 @@
 
 namespace Sam.Application.Default;
 
-public class RequestHandlerBase {
+public class HandlerBase {
     protected readonly IApplicationDbContext _context;
-    public RequestHandlerBase(IApplicationDbContext context) => _context = context;
+    public HandlerBase(IApplicationDbContext context) => _context = context;
 }

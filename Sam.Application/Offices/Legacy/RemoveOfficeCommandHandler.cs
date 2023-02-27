@@ -5,7 +5,7 @@ namespace Sam.Application.Offices.Legacy;
 
 public record struct RemoveOfficeCommand(string OfficeCode) : ICommand;
 
-public class RemoveOfficeCommandHandler : RequestHandlerBase, ICommandHandler<RemoveOfficeCommand> {
+public class RemoveOfficeCommandHandler : HandlerBase, ICommandHandler<RemoveOfficeCommand> {
     public RemoveOfficeCommandHandler(IApplicationDbContext context) : base(context) { }
 
     public int Handle(RemoveOfficeCommand request) {

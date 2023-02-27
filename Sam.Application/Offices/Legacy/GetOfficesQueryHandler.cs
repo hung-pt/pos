@@ -6,7 +6,7 @@ namespace Sam.Application.Offices.Legacy;
 
 public record struct GetOfficesQuery() : IQuery<IList<Office>>;
 
-public class GetOfficesQueryHandler : RequestHandlerBase, IQueryHandler<GetOfficesQuery, IList<Office>> {
+public class GetOfficesQueryHandler : HandlerBase, IQueryHandler<GetOfficesQuery, IList<Office>> {
     public GetOfficesQueryHandler(IApplicationDbContext context) : base(context) { }
 
     public IList<Office> Handle(GetOfficesQuery request) {

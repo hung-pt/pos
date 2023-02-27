@@ -8,7 +8,7 @@ namespace Sam.Application.Generic;
 
 public record struct RemoveCommand(string OfficeCode) : IRequest<Office?>;
 
-public class RemoveHandler : RequestHandlerBase, IRequestHandler<RemoveCommand, Office?> {
+public class RemoveHandler : HandlerBase, IRequestHandler<RemoveCommand, Office?> {
     public RemoveHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<Office?> Handle(RemoveCommand req, CancellationToken ct) {

@@ -7,7 +7,7 @@ namespace Sam.Application.Offices.Legacy;
 
 public record struct GetOfficeByIdQuery(string OfficeCode) : IQuery<Office?>;
 
-public class GetOfficeByIdQueryHandler : RequestHandlerBase, IQueryHandler<GetOfficeByIdQuery, Office?> {
+public class GetOfficeByIdQueryHandler : HandlerBase, IQueryHandler<GetOfficeByIdQuery, Office?> {
     public GetOfficeByIdQueryHandler(IApplicationDbContext context) : base(context) { }
 
     public Office? Handle(GetOfficeByIdQuery query) {

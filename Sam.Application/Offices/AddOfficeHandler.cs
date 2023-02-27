@@ -18,7 +18,7 @@ public record struct AddOfficeCommand(
     string? Territory = default
 ) : IRequest<OfficeDto>;
 
-public class AddOfficeHandler : RequestHandlerBase, IRequestHandler<AddOfficeCommand, OfficeDto> {
+public class AddOfficeHandler : HandlerBase, IRequestHandler<AddOfficeCommand, OfficeDto> {
     public AddOfficeHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<OfficeDto> Handle(AddOfficeCommand request, CancellationToken cancellationToken) {

@@ -15,7 +15,7 @@ public record GetByIdQuery(
     int PageSize = 10
 ) : IRequest<object?>;
 
-public class GetByIdHandler : RequestHandlerBase, IRequestHandler<GetByIdQuery, object?> {
+public class GetByIdHandler : HandlerBase, IRequestHandler<GetByIdQuery, object?> {
     public GetByIdHandler(IApplicationDbContext context) : base(context) { }
 
     public async Task<object?> Handle(GetByIdQuery request, CancellationToken ccToken) {

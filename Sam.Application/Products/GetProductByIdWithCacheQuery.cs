@@ -9,7 +9,7 @@ namespace Sam.Application.Products;
 
 public record struct GetProductByIdWithCacheQuery(string ProductCode, Type? ResponseType) : IRequest<Product?>;
 
-file class Handler : RequestHandlerBase, IRequestHandler<GetProductByIdWithCacheQuery, Product?> {
+file class Handler : HandlerBase, IRequestHandler<GetProductByIdWithCacheQuery, Product?> {
     public Handler(IApplicationDbContext context) : base(context) { }
 
     public async Task<Product?> Handle(GetProductByIdWithCacheQuery r, CancellationToken ct) {
