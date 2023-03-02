@@ -1,10 +1,10 @@
-﻿using MediatR;
-using Sam.Application.Default;
-using Sam.Application.DTOs;
-using Sam.Application.Interfaces;
-using Sam.Domain;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Dtos;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using MediatR;
 
-namespace Sam.Application.Offices;
+namespace Ddd.Application.Offices;
 
 public record struct AddOfficeCommand(
     string OfficeCode,
@@ -18,8 +18,8 @@ public record struct AddOfficeCommand(
     string? Territory = default
 ) : IRequest<OfficeDto>;
 
-public class AddOfficeHandler : HandlerBase, IRequestHandler<AddOfficeCommand, OfficeDto> {
-    public AddOfficeHandler(IApplicationDbContext context) : base(context) { }
+file class H : HandlerBase, IRequestHandler<AddOfficeCommand, OfficeDto> {
+    public H(IApplicationDbContext context) : base(context) { }
 
     public async Task<OfficeDto> Handle(AddOfficeCommand request, CancellationToken cancellationToken) {
         var newOffice = Mapper.Map<Office>(request);

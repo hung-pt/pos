@@ -1,7 +1,8 @@
+using Ddd.Domain;
+using Ddd.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sam.Domain;
-using Sam.Infrastructure.Data;
 using Sam.Infrastructure.Others;
 using System.Collections.Concurrent;
 

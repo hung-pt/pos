@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Ddd.Domain.Common;
 
-namespace Sam.Domain;
+namespace Ddd.Domain;
 
 
 //public record struct OfficeCode {
@@ -27,18 +28,7 @@ public class Office : Entity {
         OfficeCode = officeCode;
     }
 
-    public Office(
-        string officeCode, string? city, string? phone, string? addressLine1, string? addressLine2, string? state, string? country,
-        string? postalCode, string? territory
-        ) : this(officeCode) {
-        OfficeCode = officeCode;
-        City = city;
-        Phone = phone;
-        AddressLine1 = addressLine1;
-        AddressLine2 = addressLine2;
-        State = state;
-        Country = country;
-        PostalCode = postalCode;
-        Territory = territory;
+    public override FluentValidation.Results.ValidationResult Validate() {
+        throw new NotImplementedException();
     }
 }

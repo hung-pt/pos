@@ -1,4 +1,4 @@
-﻿namespace Sam.Application.DTOs;
+﻿namespace Ddd.Application.Dtos;
 
 public record OfficeDto(
     string OfficeCode,

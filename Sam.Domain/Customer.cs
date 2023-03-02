@@ -1,6 +1,8 @@
 ﻿using System.Text.Json.Serialization;
+using Ddd.Domain.Common;
+using FluentValidation.Results;
 
-namespace Sam.Domain;
+namespace Ddd.Domain;
 
 public class Customer : Entity {
     public int CustomerNumber { get; set; }
@@ -40,4 +42,12 @@ public class Customer : Entity {
         SalesRepEmployeeNumber = salesRepEmployeeNumber;
         CreditLimit = creditLimit;
     }
+
+    public override ValidationResult Validate() {
+        throw new NotImplementedException();
+    }
+}
+
+internal static partial class Vtors { 
+    
 }

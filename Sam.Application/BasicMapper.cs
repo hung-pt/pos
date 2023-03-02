@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Sam.Application {
+namespace Ddd.Application {
     public static class Mapper { // primitive mapper
         public static TTo? Map<TTo>(object source) where TTo : class, new() {
             if (source == null)

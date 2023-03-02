@@ -1,11 +1,12 @@
-﻿using MediatR;
+﻿using Ddd.Application;
+using Ddd.Application.Interfaces;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Sam.Application.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 
-namespace Sam.Application.Default;
+namespace Ddd.Application.Default;
 
 public record GetByIdQuery(
     Type EntityType,

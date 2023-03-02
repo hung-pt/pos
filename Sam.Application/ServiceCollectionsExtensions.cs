@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Sam.Application;
+namespace Ddd.Application;
 
 public static class ServiceCollectionsExtensions {
     public static IServiceCollection AddCqrs(this IServiceCollection services) {

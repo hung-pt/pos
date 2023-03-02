@@ -1,6 +1,6 @@
 ﻿using Consul;
+using Ddd.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using Sam.Infrastructure.Data;
 using System.Reflection;
 
 namespace multi_threadings;
@@ -8,10 +8,10 @@ namespace multi_threadings;
 public static partial class Utilities {
     //
     public static async Task EnsureDbAsync(IServiceProvider sp) {
-        await using var context = sp.CreateScope().ServiceProvider.GetRequiredService<EcomShopContext>();
+        //await using var context = sp.CreateScope().ServiceProvider.GetRequiredService<EcomShopContext>();
 
         //await context.Database.EnsureDeletedAsync();
-        await context.Database.MigrateAsync();
+        //await context.Database.MigrateAsync();
     }
 
     //

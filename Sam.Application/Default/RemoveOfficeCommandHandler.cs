@@ -1,10 +1,9 @@
-﻿using MediatR;
+﻿using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
 
-namespace Sam.Application.Generic;
+namespace Ddd.Application.Default;
 
 public record struct RemoveCommand(string OfficeCode) : IRequest<Office?>;
 

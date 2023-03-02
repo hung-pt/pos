@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Ddd.Domain.Common;
 
-namespace Sam.Domain;
+namespace Ddd.Domain;
 
 public class Employee : Entity {
     [Key] public int EmployeeNumber { get; set; }
@@ -30,5 +31,9 @@ public class Employee : Entity {
         OfficeCode = officeCode;
         ReportsToEmployeeNumber = reportsTo;
         JobTitle = jobTitle;
+    }
+
+    public override FluentValidation.Results.ValidationResult Validate() {
+        throw new NotImplementedException();
     }
 }

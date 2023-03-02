@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sam.Application.Interfaces;
-using Sam.Domain;
-using System.Collections.Generic;
+﻿using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using System.Xml;
 
-namespace Sam.Infrastructure.Data;
+namespace Ddd.Infrastructure.Data;
 
 public class EcomShopContext : DbContext, IApplicationDbContext {
     public DbSet<Office> Offices { get; set; }

@@ -1,8 +1,8 @@
 ﻿using Api.Catalog.Dtos;
 using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
-using Sam.Application.Offices;
-using Sam.Application.Products;
+using Ddd.Application.Offices;
+using Ddd.Application.Products;
 using System.ComponentModel;
 using System.Text.Json;
 
@@ -44,7 +44,7 @@ public static class ProductApi {
             });
         group.MapPost("/",
             async (IMediator md, ProductCreateDto newProduct) =>
-                await md.Send(new AddProductCommand(newProduct, typeof(ProductDto))));
+                await md.Send(new AddOrderCommand(newProduct, typeof(ProductDto))));
         //group.MapPut("/{productCode}",
         //    async (IMediator md, string productCode) => 
         //        (ProductDto?)await md.Send(new UpdateProductCommand(newProduct, typeof(ProductDto))));

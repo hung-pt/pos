@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Sam.Application.DTOs;
+﻿using Ddd.Application.Dtos;
+using MediatR;
 using Sam.Application.Offices;
 using System.ComponentModel;
 

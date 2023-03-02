@@ -1,9 +1,9 @@
-﻿using MediatR;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
 
-namespace Sam.Application.Offices;
+namespace Ddd.Application.Products;
 
 public record ListProductsQuery(int PageIndex, int PageSize, Type? ResponseType) : IRequest<IEnumerable<object?>>;
 

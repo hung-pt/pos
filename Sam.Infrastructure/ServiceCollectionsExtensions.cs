@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Ddd.Application.Interfaces;
+using Ddd.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Sam.Application.Interfaces;
-using Sam.Infrastructure.Data;
 
-namespace Sam.Infrastructure {
+namespace Ddd.Infrastructure {
     public static class ServiceCollectionsExtensions {
         public static IServiceCollection AddInfrastructure(this IServiceCollection serviceCollection, string? connectionString) {
             serviceCollection.AddSqlServer<EcomShopContext>(
                 connectionString,
                 options => options
-                    .MigrationsAssembly("Sam.Infrastructure")
+                    .MigrationsAssembly("Ddd.Infrastructure")
             );
             serviceCollection.AddDbContext<EcomShopContext>(
                 options => options

@@ -1,11 +1,11 @@
 using Consul;
+using Ddd.Application;
+using Ddd.Infrastructure;
 using Microsoft.AspNetCore.Builder.Extensions;
 using Microsoft.EntityFrameworkCore;
 using multi_threadings;
 using multi_threadings.HealthCheck;
 using multi_threadings.Routes;
-using Sam.Application;
-using Sam.Infrastructure;
 using Sam.Infrastructure.Data;
 using System.Reflection;
 

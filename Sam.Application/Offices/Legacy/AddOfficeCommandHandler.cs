@@ -1,8 +1,8 @@
-﻿using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
 
-namespace Sam.Application.Offices.Legacy;
+namespace Ddd.Application.Offices.Legacy;
 
 public record struct AddOfficeCommand(Office NewOffice) : ICommand;
 

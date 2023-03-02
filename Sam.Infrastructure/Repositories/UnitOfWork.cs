@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Sam.Infrastructure.Others;
+namespace Ddd.Infrastructure.Repositories;
 
 public interface IUnitOfWork
 {

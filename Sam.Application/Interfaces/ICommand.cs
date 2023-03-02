@@ -1,4 +1,4 @@
-﻿namespace Sam.Application.Interfaces;
+﻿namespace Ddd.Application.Interfaces;
 
 public interface ICommand {
 

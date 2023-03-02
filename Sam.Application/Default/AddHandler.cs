@@ -1,7 +1,7 @@
-﻿using MediatR;
-using Sam.Application.Interfaces;
+﻿using Ddd.Application.Interfaces;
+using MediatR;
 
-namespace Sam.Application.Default;
+namespace Ddd.Application.Default;
 
 public record AddEntityCommand(
     Type EntityType,

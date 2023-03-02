@@ -1,14 +1,14 @@
-﻿using MediatR;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using MediatR;
 
-namespace Sam.Application.Offices;
+namespace Ddd.Application.Offices;
 
 public record struct UpdateOfficeCommand(string OfficeCode) : IRequest<Office?>;
 
-public class UpdateOfficeHandler : HandlerBase, IRequestHandler<RemoveOfficeCommand, Office?> {
-    public UpdateOfficeHandler(IApplicationDbContext context) : base(context) { }
+file class H : HandlerBase, IRequestHandler<RemoveOfficeCommand, Office?> {
+    public H(IApplicationDbContext context) : base(context) { }
 
     public async Task<Office?> Handle(RemoveOfficeCommand request, CancellationToken cancellationToken) {
         throw new NotImplementedException();

@@ -1,8 +1,9 @@
-﻿using MediatR;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
+﻿using Ddd.Application;
+using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using MediatR;
 
-namespace Sam.Application.Employees {
+namespace Ddd.Application.Employees {
     public record GetEmpByIdQuery(int EmpNo, Type ReturnType) : IRequest<object?>;
 
     file class Handler : HandlerBase, IRequestHandler<GetEmpByIdQuery, object?> {

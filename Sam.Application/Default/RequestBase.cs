@@ -1,6 +1,5 @@
-﻿using Sam.Application.Interfaces;
-
-namespace Sam.Application.Default;
+﻿
+namespace Ddd.Application.Default;
 
 public record RequestBase(Type? ResponseType) {
     // todo

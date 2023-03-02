@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sam.Domain;
+﻿using Ddd.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace Sam.Application.Interfaces;
+namespace Ddd.Application.Interfaces;
 
 public interface IApplicationDbContext {
     DbSet<Office> Offices { get; set; }

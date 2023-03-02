@@ -1,7 +1,7 @@
-﻿using Sam.Application.Default;
-using Sam.Application.Interfaces;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
 
-namespace Sam.Application.Offices.Legacy;
+namespace Ddd.Application.Offices.Legacy;
 
 public record struct RemoveOfficeCommand(string OfficeCode) : ICommand;
 

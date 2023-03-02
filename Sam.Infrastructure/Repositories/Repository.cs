@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sam.Domain;
+﻿using Ddd.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace Sam.Infrastructure.Others;
+namespace Ddd.Infrastructure.Repositories;
 
-public interface IRepository<T> where T : class {
+public interface IRepository<T> where T : class
+{
     T GetById(object id);
     IEnumerable<T> GetAll();
     void Insert(T entity);
@@ -11,11 +12,13 @@ public interface IRepository<T> where T : class {
     void Delete(T entity);
 }
 
-public class BaseRepository<T> : IRepository<T> where T : class {
+public class BaseRepository<T> : IRepository<T> where T : class
+{
     protected readonly DbContext _context; // is dbSet only enough?
     protected readonly DbSet<T> _dbSet;
 
-    public BaseRepository(DbContext context) {
+    public BaseRepository(DbContext context)
+    {
         _context = context;
         _dbSet = context.Set<T>();
     }
@@ -29,24 +32,30 @@ public class BaseRepository<T> : IRepository<T> where T : class {
 
 
 
-public interface IOrderRepository : IRepository<Order> { // method nghiep vu
+public interface IOrderRepository : IRepository<Order>
+{ // method nghiep vu
 }
-public interface IOrderDetailRepository : IRepository<OrderDetail> { // method nghiep vu
+public interface IOrderDetailRepository : IRepository<OrderDetail>
+{ // method nghiep vu
 }
-public interface IProductRepository : IRepository<Product> { // method nghiep vu
+public interface IProductRepository : IRepository<Product>
+{ // method nghiep vu
 }
 
-public class OrderRepository : BaseRepository<Order>, IOrderRepository {
+public class OrderRepository : BaseRepository<Order>, IOrderRepository
+{
     public OrderRepository(DbContext context) : base(context) { }
     // method nghiep vu
 }
 
-public class OrderDetailRepository : BaseRepository<OrderDetail>, IOrderDetailRepository {
+public class OrderDetailRepository : BaseRepository<OrderDetail>, IOrderDetailRepository
+{
     public OrderDetailRepository(DbContext context) : base(context) { }
     // method nghiep vu
 }
 
-public class ProductRepository : BaseRepository<Product>, IProductRepository {
+public class ProductRepository : BaseRepository<Product>, IProductRepository
+{
     public ProductRepository(DbContext context) : base(context) { }
     // method nghiep vu
 }

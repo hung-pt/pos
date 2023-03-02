@@ -1,8 +1,9 @@
-﻿using MediatR;
+﻿using Ddd.Application;
+using Ddd.Application.Interfaces;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Sam.Application.Interfaces;
 
-namespace Sam.Application.Default;
+namespace Ddd.Application.Default;
 
 public record GetQuery(
     Type EntityType,

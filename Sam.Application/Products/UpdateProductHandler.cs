@@ -1,8 +1,8 @@
-﻿using MediatR;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using MediatR;
 
-namespace Sam.Application.Products;
+namespace Ddd.Application.Products;
 
 public record UpdateProductCommand(Type? ResponseType) : IRequest<object?>;
 

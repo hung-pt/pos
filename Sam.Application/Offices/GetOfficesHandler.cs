@@ -1,15 +1,15 @@
-﻿using MediatR;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
 
-namespace Sam.Application.Offices;
+namespace Ddd.Application.Offices;
 
 public record GetOfficesQuery(int PageNumber = 1, int PageCount = 10) : IRequest<IList<Office>>;
 
-public class GetOfficesHandler : HandlerBase, IRequestHandler<GetOfficesQuery, IList<Office>> {
-    public GetOfficesHandler(IApplicationDbContext context) : base(context) { }
+file class H : HandlerBase, IRequestHandler<GetOfficesQuery, IList<Office>> {
+    public H(IApplicationDbContext context) : base(context) { }
 
     public async Task<IList<Office>> Handle(GetOfficesQuery request, CancellationToken cancellationToken) {
         return await _context.Offices

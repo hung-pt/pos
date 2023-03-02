@@ -1,11 +1,11 @@
-﻿using MediatR;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
 using Z.EntityFramework.Plus;
 
-namespace Sam.Application.Products;
+namespace Ddd.Application.Products;
 
 public record struct GetProductByIdWithCacheQuery(string ProductCode, Type? ResponseType) : IRequest<Product?>;
 

@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Ddd.Domain.Common;
 
-namespace Sam.Domain;
+namespace Ddd.Domain;
 
 public class Product : Entity {
     [Key] public string? ProductCode { get; set; }
@@ -30,5 +31,9 @@ public class Product : Entity {
         QuantityInStock = quantityInStock;
         BuyPrice = buyPrice;
         MSRP = mSRP;
+    }
+
+    public override FluentValidation.Results.ValidationResult Validate() {
+        throw new NotImplementedException();
     }
 }

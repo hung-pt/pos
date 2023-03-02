@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace Sam.Application.Offices.Legacy;
+namespace Ddd.Application.Offices.Legacy;
 
 public record struct GetOfficeByIdQuery(string OfficeCode) : IQuery<Office?>;
 

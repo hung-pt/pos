@@ -1,6 +1,8 @@
 ﻿using System.Text.Json.Serialization;
+using Ddd.Domain.Common;
+using FluentValidation.Results;
 
-namespace Sam.Domain;
+namespace Ddd.Domain;
 
 public class Payment : Entity {
     public int CustomerNumber { get; set; }
@@ -15,5 +17,9 @@ public class Payment : Entity {
         CheckNumber = checkNumber;
         PaymentDate = paymentDate;
         Amount = amount;
+    }
+
+    public override ValidationResult Validate() {
+        throw new NotImplementedException();
     }
 }

@@ -1,6 +1,6 @@
-﻿using Microsoft.OpenApi.Any;
+﻿using Ddd.Application.Dtos;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using Sam.Application.DTOs;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace multi_threadings.Routes;

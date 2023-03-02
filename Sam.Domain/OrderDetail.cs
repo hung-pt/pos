@@ -1,6 +1,8 @@
 ﻿using System.Text.Json.Serialization;
+using Ddd.Domain.Common;
+using FluentValidation.Results;
 
-namespace Sam.Domain;
+namespace Ddd.Domain;
 
 public class OrderDetail : Entity {
     public int OrderNumber { get; set; }
@@ -18,5 +20,9 @@ public class OrderDetail : Entity {
         QuantityOrdered = quantityOrdered;
         PriceEach = priceEach;
         OrderLineNumber = orderLineNumber;
+    }
+
+    public override ValidationResult Validate() {
+        throw new NotImplementedException();
     }
 }

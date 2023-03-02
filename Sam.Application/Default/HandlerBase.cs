@@ -1,6 +1,6 @@
-﻿using Sam.Application.Interfaces;
+﻿using Ddd.Application.Interfaces;
 
-namespace Sam.Application.Default;
+namespace Ddd.Application.Default;
 
 public class HandlerBase {
     protected readonly IApplicationDbContext _context;

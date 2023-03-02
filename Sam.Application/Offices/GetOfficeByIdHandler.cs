@@ -1,15 +1,15 @@
-﻿using MediatR;
+﻿using Ddd.Application.Default;
+using Ddd.Application.Interfaces;
+using Ddd.Domain;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Sam.Application.Default;
-using Sam.Application.Interfaces;
-using Sam.Domain;
 
-namespace Sam.Application.Offices;
+namespace Ddd.Application.Offices;
 
 public record struct GetOfficeByIdQuery(string OfficeCode) : IRequest<Office?>;
 
-public class GetOfficeByIdHandler : HandlerBase, IRequestHandler<GetOfficeByIdQuery, Office?> {
-    public GetOfficeByIdHandler(IApplicationDbContext context) : base(context) { }
+file class H : HandlerBase, IRequestHandler<GetOfficeByIdQuery, Office?> {
+    public H(IApplicationDbContext context) : base(context) { }
 
     public async Task<Office?> Handle(GetOfficeByIdQuery request, CancellationToken cancellationToken) {
         return await _context.Offices
