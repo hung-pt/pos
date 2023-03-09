@@ -25,17 +25,21 @@ public class ProductLineApiTests {
 
     [TestInitialize()]
     public void TestInitialize() {
-        //_httpClient = new TestWebAppFactory().CreateClient();
-        _httpClient = new WebApplicationFactory<Program>()
+        var factory = new WebApplicationFactory<Program>()
             .WithWebHostBuilder(builder => {
                 builder.ConfigureServices(services => {
-                    services.RemoveAll<ICatalogDbContext>();
-                    services.AddDbContextPool<ICatalogDbContext, CatalogDbContext>(options => {
-                        options.UseInMemoryDatabase("EcomShopDatabase");
-                    });
+                    var descriptor = services.SingleOrDefault(
+                            d => d.ServiceType ==
+                            typeof(DbContextOptions<CatalogDbContext>));
+                    services.Remove(descriptor);
+                    services.AddDbContext<CatalogDbContext>(options => options.UseInMemoryDatabase("InMemoryDB"));
                 });
-            })
-            .CreateClient();
+            });
+        _httpClient = factory.CreateClient();
+
+        //using var scope = factory.Services.CreateScope();
+        //var dbContext = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
+        //dbContext.Database.Migrate();
     }
 
 

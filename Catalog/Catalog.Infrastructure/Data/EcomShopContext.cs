@@ -15,18 +15,6 @@ public class CatalogDbContext : DbContext, ICatalogDbContext {
 
     }
 
-    public IQueryable<object> GetDbSet(Type entityType) {
-        MethodInfo setMethod = GetType().GetMethod(
-            nameof(Set),
-            BindingFlags.Public | BindingFlags.Instance,
-            Array.Empty<Type>()
-        )!;
-        setMethod = setMethod.MakeGenericMethod(entityType);
-        var res = (IQueryable<object>)setMethod.Invoke(this, null)!;
-        return res;
-    }
-
-
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         modelBuilder.Entity<ProductLine>().ToTable("ProductLines");
         modelBuilder.Entity<ProductLine>().HasMany(line => line.Products).WithOne(product => product.ProductLine);

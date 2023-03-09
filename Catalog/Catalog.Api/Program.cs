@@ -7,8 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddServiceDiscovery(o => o.UseEureka());
-builder.Services.AddRedis();
 
 //
 builder.Services.AddRequestHandlers();
